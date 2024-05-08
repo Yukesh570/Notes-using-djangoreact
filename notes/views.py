@@ -15,16 +15,12 @@ def note_data(request):
 @api_view(['POST'])
 def add_data(request):
     data=request.data
-    serializer= noteserializer(data=data)
-    if serializer.is_valid():
-        serializer.save()
-    return Response('added')
-# or after  data=request.data
-# note= notes.objects.create(
-#         body=data['body']
-#     )
-#     serializer= noteserializer(note,many=False)
-#     return Response(serializer.data)
+    note= notes.objects.create(
+    body=data['body']
+    )
+    serializer= noteserializer(note,many=False)
+    return Response(serializer.data)
+
 
 @api_view(['GET'])
 def get_data(request,pk):
