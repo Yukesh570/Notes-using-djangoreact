@@ -50,6 +50,8 @@ const NotePage = (match,navigate)=>{
     let handleadd=()=>{
         addnote()
         navigate('/')
+        window.location.reload(); // Reload the website
+
     }
 
     let deletenote =async()=>{
@@ -64,6 +66,8 @@ const NotePage = (match,navigate)=>{
     let handledelete =()=>{
         deletenote()
         navigate('/')
+        window.location.reload(); // Reload the website
+
     }
 
     let handlesubmit =()=>{
@@ -73,6 +77,8 @@ const NotePage = (match,navigate)=>{
             updateNote()
          }
         navigate('/')
+        window.location.reload(); // Reload the website
+
     }
 
   return (
